@@ -1,0 +1,66 @@
+==Overall statistics==
+{| class="wikitable" style="width:1100px; text-align:center; font-size:80%"
+|+ Confirmed COVID-19 cases in the Czech Republic by sex and age as of {{ last_updated }}<ref>{{ "{{" }}Cite web|title=COVID‑19: Přehled osob s laboratorně prokázaným onemocněním COVID‑19 dle hlášení krajských hygienických stanic (validovaná data)|url=https://onemocneni-aktualne.mzcr.cz/covid-19|access-date={{ last_updated }}|website=onemocneni-aktualne.mzcr.cz|language=cs{{ "}}" }}</ref>
+! rowspan="2" colspan="2" | Classification
+! colspan="3" | Cases
+! colspan="3" | Recovered
+! colspan="3" | Deaths
+! colspan="3" | Lethality
+|-
+! Men
+! Women
+! Unkown
+! Total
+! Men
+! Women
+! Unknown
+! Total
+! Men
+! Women
+! Unknown
+! Total
+! Men
+! Women
+! Unknown
+! Total
+|-
+! colspan="2" | All
+|'''{{ total.cases_male }}''' ({{ (total.cases_male / total.cases_total * 100)|round(1) }} %)
+|'''{{ total.cases_female }}''' ({{ (total.cases_female / total.cases_total * 100)|round(1) }} %)
+|'''{{ total.cases_unknown }}''' ({{ (total.cases_unknown / total.cases_total * 100)|round(1) }} %)
+|'''{{ total.cases_total }}''' (100 %)
+|'''{{ total.recovered_male }}''' ({{ (total.recovered_male / total.recovered_total * 100)|round(1) }} %)
+|'''{{ total.recovered_female }}''' ({{ (total.recovered_female / total.recovered_total * 100)|round(1) }} %)
+|'''{{ total.recovered_unknown }}''' ({{ (total.recovered_unknown / total.recovered_total * 100)|round(1) }} %)
+|'''{{ total.recovered_total }}''' (100 %)
+|'''{{ total.deaths_male }}''' ({{ (total.deaths_male / total.deaths_total * 100)|round(1) }} %)
+|'''{{ total.deaths_female }}''' ({{ (total.deaths_female / total.deaths_total * 100)|round(1) }} %)
+|'''{{ total.deaths_unknown }}''' ({{ (total.deaths_unknown / total.deaths_total * 100)|round(1) }} %)
+|'''{{ total.deaths_total }}''' (100 %)
+|{{ (total.deaths_male / total.recovered_male * 100)|round(1) }} %
+|{{ (total.deaths_female / total.recovered_female * 100)|round(1) }} %
+|{{ (total.deaths_unknown / total.recovered_unknown * 100)|round(1) }} %
+|{{ (total.deaths_total / total.recovered_total * 100)|round(1) }} %
+|-
+! rowspan="11" |Age
+{% for group in age_groups %}
+! {{ group.age_range }}
+|'''{{ group.cases_male }}''' ({{ (group.cases_male / group.cases_total * 100)|round(1) }} %)
+|'''{{ group.cases_female }}''' ({{ (group.cases_female / group.cases_total * 100)|round(1) }} %)
+|'''{{ group.cases_unknown }}''' ({{ (group.cases_unknown / group.cases_total * 100)|round(1) }} %)
+|'''{{ group.cases_total }}''' (100 %)
+|'''{{ group.recovered_male }}''' ({{ (group.recovered_male / group.recovered_total * 100)|round(1) }} %)
+|'''{{ group.recovered_female }}''' ({{ (group.recovered_female / group.recovered_total * 100)|round(1) }} %)
+|'''{{ group.recovered_unknown }}''' ({{ (group.recovered_unknown / group.recovered_total * 100)|round(1) }} %)
+|'''{{ group.recovered_total }}''' (100 %)
+|'''{{ group.deaths_male }}''' ({{ (group.deaths_male / group.deaths_total * 100)|round(1) }} %)
+|'''{{ group.deaths_female }}''' ({{ (group.deaths_female / group.deaths_total * 100)|round(1) }} %)
+|'''{{ group.deaths_unknown }}''' ({{ (group.deaths_unknown / group.deaths_total * 100)|round(1) }} %)
+|'''{{ group.deaths_total }}''' (100 %)
+|{{ (group.deaths_male / group.recovered_male * 100)|round(1) }} %
+|{{ (group.deaths_unknown / group.recovered_unknown * 100)|round(1) }} %
+|{{ (group.deaths_total / group.recovered_total * 100)|round(1) }} %
+|-
+{% endfor %}
+|}
+{{ "{{" }}update|section|date={{ last_updated }}{{ "}}" }}
